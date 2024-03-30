@@ -1,3 +1,23 @@
-from django.shortcuts import render
+from rest_framework.generics import RetrieveAPIView, UpdateAPIView, \
+    DestroyAPIView, CreateAPIView
+from rest_framework.viewsets import ViewSetMixin
 
-# Create your views here.
+from .models import Product, Shop
+from .serializers import ProductSerializer
+
+
+class ProductViewSet(ViewSetMixin,
+                     CreateAPIView,
+                     RetrieveAPIView,
+                     UpdateAPIView,
+                     DestroyAPIView):
+    queryset = Product.objects.all()
+    serializer_class = ProductSerializer
+
+
+class ShopViewSet(ViewSetMixin,
+                  CreateAPIView,
+                  RetrieveAPIView,
+                  UpdateAPIView,
+                  DestroyAPIView):
+    queryset = Shop.objects.all()
