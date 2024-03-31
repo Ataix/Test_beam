@@ -26,7 +26,7 @@ class UserCreateView(CreateAPIView):
     permission_classes = [AllowAny]
 
 
-class CrudPageView(APIView):
+class PageView(APIView):
     renderer_classes = [TemplateHTMLRenderer]
     template_name = 'page.html'
     
