@@ -44,6 +44,7 @@ INSTALLED_APPS = [
 
     'rest_framework',
     'drf_spectacular',
+    'channels',
 ]
 
 MIDDLEWARE = [
@@ -77,6 +78,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'test_beam.wsgi.application'
 
+ASGI_APPLICATION = 'test_beam.routing.application'
 
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases

@@ -3,7 +3,7 @@ from rest_framework.generics import RetrieveAPIView, UpdateAPIView, \
 from rest_framework.viewsets import ViewSetMixin
 
 from .models import Product, Shop
-from .serializers import ProductSerializer
+from .serializers import ProductSerializer, ShopSerializer
 
 
 class ProductViewSet(ViewSetMixin,
@@ -21,3 +21,4 @@ class ShopViewSet(ViewSetMixin,
                   UpdateAPIView,
                   DestroyAPIView):
     queryset = Shop.objects.all()
+    serializer_class = ShopSerializer

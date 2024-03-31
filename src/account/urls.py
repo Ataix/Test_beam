@@ -1,13 +1,14 @@
 from django.urls import path
 
-from .views import UserViewSet
+from .views import UserViewSet, CrudPageView, UserCreateView
 
 urlpatterns = [
     path('<int:pk>/', UserViewSet.as_view({
-        'post': 'create',
         'get': 'retrieve',
         'put': 'update',
         'patch': 'partial_update',
         'delete': 'destroy',
     })),
+    path('create/', UserCreateView.as_view()),
+    path('crud/', CrudPageView.as_view())
 ]
